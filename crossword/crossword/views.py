@@ -1,0 +1,27 @@
+from django.shortcuts import render
+
+
+def home(request):
+    books = [
+        {'id': 1, 'pic':'static/img/b1.jpg', 'name': 'The Flamethrowers ', 'author': 'Rachel Kushner', 'price': 19.99, 'quantity': 5, 'text': 'The Flamethrowers is an intensely engaging exploration of the mystique of the feminine, the fake, the terrorist. At its center is Kushner’s brilliantly realized protagonist, a young woman on the verge. Thrilling and fearless, this is a major American novel from a writer of spectacular talent and imagination.'},
+        {'id': 2, 'pic':'static/img/b2.jpg', 'name': 'The Secret Messenger', 'author': 'Mandy Robotham', 'price': 24.99, 'quantity': 3, 'text': 'The highly awaited new novel from the USA Today bestselling author of The German Midwife. Venice, 1943 The world is at war, and Stella Jilani is leading a double life. By day she works in the lion’s den as a typist for the Reich; by night, she risks her life as a messenger for the Italian resistance. Against all odds, Stella must impart Nazi secrets, smuggle essential supplies and produce an underground newspaper on her beloved typewriter.'},
+        {'id': 3, 'pic':'static/img/b3.jpg', 'name': 'The Alchemist', 'author': 'Paulo Coelho', 'price': 14.99, 'quantity': 0, 'text': "Paulo Coelho's masterpiece tells the mystical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure. His quest will lead him to riches far different—and far more satisfying—than he ever imagined. Santiago's journey teaches us about the essential wisdom of listening to our hearts, recognizing opportunity and learning to read the omens strewn along life's path, and, most importantly, following our dreams. Combining magic, mysticism, wisdom, and wonder into an inspiring tale of self-discovery."},
+        {'id': 4, 'pic':'static/img/b4.jpg', 'name': 'Harry Potter and the Chamber of Secrets', 'author': 'J.K. Rowling', 'price': 29.99, 'quantity': 2, 'text': 'Harry Potter And The Chamber Of Secrets is the thrilling second installment in the Harry Potter series by J.K. Rowling. Harry uncovers a dark secret within Hogwarts, facing dangerous obstacles on his quest to save his friends and discover the truth. In this Book he is warned by a house-elf named Dobby about an unnamed danger awaiting him at the Hogwarts School of Witchcraft and Wizardry. Unperturbed, Harry returns to school, only to find the whispered rumors of the "Chamber of Secrets" — a hidden part of the castle said to house a monstrous creature.'},
+    ]
+    context = {'books': books}
+    return render(request, 'index.html', context)
+
+def cart(request):
+    books = [
+        {'id': 1, 'picture':'/static/img/b1.jpg', 'name': 'The Flamethrowers ', 'author': 'Rachel Kushner', 'price': 19.99, 'quantity': 5, 'text': 'The Flamethrowers is an intensely engaging exploration of the mystique of the feminine, the fake, the terrorist. At its center is Kushner’s brilliantly realized protagonist, a young woman on the verge. Thrilling and fearless, this is a major American novel from a writer of spectacular talent and imagination.'},
+        {'id': 2, 'picture':'/static/img/b2.jpg', 'name': 'The Secret Messenger', 'author': 'Mandy Robotham', 'price': 24.99, 'quantity': 3, 'text': 'The highly awaited new novel from the USA Today bestselling author of The German Midwife. Venice, 1943 The world is at war, and Stella Jilani is leading a double life. By day she works in the lion’s den as a typist for the Reich; by night, she risks her life as a messenger for the Italian resistance. Against all odds, Stella must impart Nazi secrets, smuggle essential supplies and produce an underground newspaper on her beloved typewriter.'},
+        {'id': 3, 'picture':'/static/img/b3.jpg', 'name': 'The Alchemist', 'author': 'Paulo Coelho', 'price': 14.99, 'quantity': 0, 'text': "Paulo Coelho's masterpiece tells the mystical story of Santiago, an Andalusian shepherd boy who yearns to travel in search of a worldly treasure. His quest will lead him to riches far different—and far more satisfying—than he ever imagined. Santiago's journey teaches us about the essential wisdom of listening to our hearts, recognizing opportunity and learning to read the omens strewn along life's path, and, most importantly, following our dreams. Combining magic, mysticism, wisdom, and wonder into an inspiring tale of self-discovery."},
+        {'id': 4, 'picture':'/static/img/b4.jpg', 'name': 'Harry Potter and the Chamber of Secrets', 'author': 'J.K. Rowling', 'price': 29.99, 'quantity': 2, 'text': 'Harry Potter And The Chamber Of Secrets is the thrilling second installment in the Harry Potter series by J.K. Rowling. Harry uncovers a dark secret within Hogwarts, facing dangerous obstacles on his quest to save his friends and discover the truth. In this Book he is warned by a house-elf named Dobby about an unnamed danger awaiting him at the Hogwarts School of Witchcraft and Wizardry. Unperturbed, Harry returns to school, only to find the whispered rumors of the "Chamber of Secrets" — a hidden part of the castle said to house a monstrous creature.'},
+    ]
+    context1 = {'books': books}
+    return render(request,'cart.html',context1)
+
+
+
+def order(request):
+    return render(request,'order.html')
